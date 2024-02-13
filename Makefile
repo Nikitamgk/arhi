@@ -1,4 +1,4 @@
 all:
-    $(MAKE) -C console/
+	$(MAKE) -C console
 clean:
-    $(MAKE) clean console/
+	$(MAKE) clean console

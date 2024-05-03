@@ -1,5 +1,4 @@
 #pragma once
-
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -21,23 +20,35 @@ int commands[40] = {0x00, 0x01, 0x0A, 0x0B, 0x14, 0x15, 0x1E, 0x1F, 0x20, 0x21, 
 
 
 int sc_MemoryInit (void);
+
 int sc_MemorySet (int address, int value);
+
 int sc_MemoryGet (int address, int *value);
+
 int sc_MemorySave (char *filename);
+
 int sc_MemoryLoad (char *filename);
+
 int sc_regInit (void);
+
 int sc_regSet (int reg, int value);
+
 int sc_regGet (int reg, int *value);
+
 int sc_accumulatorInit (void);
+
 int sc_accumulatorSet (int value);
+
 int sc_accumulatorGet (int *value);
+
 int sc_icounterInit (void);
+
 int sc_icounterSet (int value);
+
 int sc_icounterGet (int *value);
+
 int sc_commandEncode (int sign, int command, int operand, int *value);
+
 int sc_commandDecode (int value, int *sign, int *command, int *operand);
+
 int sc_commandValidate (int command);
-void printCell (int address);
-void printFlags (void);
-void printAccumulator (void);
-void printCounters (void);

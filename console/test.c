@@ -244,7 +244,7 @@ sc_commandValidate (int command)
 
 }
 
-void
+/*void
 printCell (int address)
 {
   int *sign = malloc (sizeof (int));
@@ -348,4 +348,4 @@ main()
   printf ("decoded: sign %d command %d operand %d", decSign, decComm, decOper);
 
   return 0;
-}
+}*/

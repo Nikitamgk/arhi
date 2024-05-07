@@ -3,7 +3,6 @@
 #pragma once
 #include "../include/mySimpleComputer.h"
 #include "../include/myTerm.h"
-#include <stdio.h>
 
 #define memoryCell = 6;
 #define FLAGS = 16;

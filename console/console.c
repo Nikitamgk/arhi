@@ -8,7 +8,7 @@ void printCell (int address, enum Colors fg, enum Colors bg)
   int *operand = malloc (sizeof (int));
   sc_commandDecode (memory[address], sign, command, operand);
   mt_getscreensize(&Row, &Col);
-  mt_gotoXY(1+Col%13, 1+Row%10);
+  mt_gotoXY(1+address%10, 1+address%13);
   mt_setfgcolor(fg);
   mt_setbgcolor(bg);
   if(*sign == 0)
@@ -24,7 +24,7 @@ void printFlags ()
 {
   int Col, Row;
   mt_getscreensize(&Row, &Col);
-  mt_gotoXY(2, Row-16);
+  mt_gotoXY(2, Col-16);
   printf("%s", (flags&IT_MASK)== IT_MASK ? "I " : "_ ");
     printf("%s", (flags&MC_MASK)== MC_MASK ? "M " : "_ ");
     printf("%s", (flags&SF_MASK)== SF_MASK ? "S " : "_ ");

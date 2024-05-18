@@ -1,6 +1,4 @@
-#include "main.c"
-//#include "console.h"
-//#include <stdio.h>
+#include "../include/mySimpleComputer.h"
 
 int
 main ()

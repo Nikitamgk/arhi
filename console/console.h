@@ -16,7 +16,6 @@
 #define memroyCellsY = 10;
 
 int IN_OUT_addres[4];
-int IN_OUT_command[4];
 
 void printCell (int address, enum Colors fg, enum Colors bg);
 

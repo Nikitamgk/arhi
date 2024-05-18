@@ -24,7 +24,7 @@ printTerm(int addres, int input)
   for(int count = 0; count <= 4; count++)
   {
   mt_gotoXY(66,17+count);
-  printf("%d> ", IN_OUT_addres[count]);
+  printf("%03d> ", IN_OUT_addres[count]);
   printf("%04d", memory[IN_OUT_addres[count]]);
   }
   return;

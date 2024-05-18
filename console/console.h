@@ -12,7 +12,11 @@
 #define Command = 16;
 #define in_out = 11;
 #define clavs = 17;
-//#define cache = 56;
+#define cache = 56;
+#define memroyCellsY = 10;
+
+int IN_OUT_addres[4];
+int IN_OUT_command[4];
 
 void printCell (int address, enum Colors fg, enum Colors bg);
 

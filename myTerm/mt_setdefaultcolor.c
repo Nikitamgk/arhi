@@ -1,7 +1,7 @@
 #include "../include/myTerm.h"
-
-int mt_clrscrn()
+int
+mt_setdefaultcolor()
 {
-    printf("\033[H\033[2J");
+    printf("\033[0m");
     return 0;
 }

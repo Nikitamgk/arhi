@@ -1,4 +1,9 @@
 #include "../include/mySimpleComputer.h"
+
+/// @brief 
+/// @param registr  1 | 4096 | 16 | 65536 | 256
+/// @param value 0 | 1
+/// @return 0 | -1
 int
 sc_regSet (int registr, int value)
 {

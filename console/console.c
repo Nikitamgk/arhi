@@ -24,13 +24,13 @@ void printFlags ()
 {
   int Col, Row;
   mt_getscreensize(&Row, &Col);
-  mt_gotoXY(2, Col-16);
+  mt_gotoXY(82, 1);
   printf("%s", (flags&IT_MASK)== IT_MASK ? "I " : "_ ");
-    printf("%s", (flags&MC_MASK)== MC_MASK ? "M " : "_ ");
-    printf("%s", (flags&SF_MASK)== SF_MASK ? "S " : "_ ");
-    printf("%s", (flags&ZD_MASK)== ZD_MASK ? "Z " : "_ ");
-    printf("%s", (flags&OO_MASK)== OO_MASK ? "O " : "_ ");
-    return;
+  printf("%s", (flags&MC_MASK)== MC_MASK ? "M " : "_ ");
+  printf("%s", (flags&SF_MASK)== SF_MASK ? "S " : "_ ");
+  printf("%s", (flags&ZD_MASK)== ZD_MASK ? "Z " : "_ ");
+  printf("%s", (flags&OO_MASK)== OO_MASK ? "O " : "_ ");
+  return;
 }
 
 void printAccumulator ()
@@ -48,7 +48,7 @@ void printAccumulator ()
     printf("-");
   printf("%d%d ", *command, *operand);
   return;
-  //16
+  printf("%4X", Accum);
 }
 
 void printCounters ()
@@ -56,7 +56,7 @@ void printCounters ()
   int Col, Row;
   mt_getscreensize(&Row, &Col);
   mt_gotoXY(5, Row-32);
-  //16
+  printf("%4X", ICount);
   return;
 }
 

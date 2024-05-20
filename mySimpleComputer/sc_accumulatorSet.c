@@ -2,7 +2,7 @@
 int
 sc_accumulatorSet (int value)
 {
-	if(value > 128 || value < -128)
+	if(value > 127 || value < -127)
 		return -1;
 	else
 	{

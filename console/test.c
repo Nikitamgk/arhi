@@ -36,13 +36,13 @@ main ()
   printf ("Status of setting invalid memory value: %d\n", result);
 
   // Установка произвольных значений флагов и вывод их содержимого
-  sc_regSet (3,1);
-  sc_regSet (2,0);
-  sc_regSet (4,1);
+  sc_regSet (3, 1);
+  sc_regSet (2, 0);
+  sc_regSet (4, 1);
   printFlags ();
 
   // Попытка установить некорректное значение флага
-  result = sc_regSet (1,2);
+  result = sc_regSet (1, 2);
   printf ("Status of setting invalid flag value: %d\n", result);
 
   // Установка значения аккумулятора и вывод его на экран
@@ -69,7 +69,8 @@ main ()
   printf ("\n");
   printAccumulator ();
 
-  // Кодирование команды и вывод полученного значения в разных системах счисления
+  // Кодирование команды и вывод полученного значения в разных системах
+  // счисления
   int command = 0x33;
   int encodedValue;
   sc_commandEncode (0, command, 0x59, &encodedValue);

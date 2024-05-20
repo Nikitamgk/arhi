@@ -1,7 +1,7 @@
-#include"../include/myTerm.h"
+#include "../include/myTerm.h"
 int
-mt_delline()
+mt_delline ()
 {
-    printf("\033[K");
-    return 0;
+  printf ("\033[K");
+  return 0;
 }

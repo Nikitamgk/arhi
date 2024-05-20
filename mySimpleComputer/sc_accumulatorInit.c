@@ -2,5 +2,5 @@
 int
 sc_accumulatorInit ()
 {
-	Accum = 0;
+  Accum = 0;
 }

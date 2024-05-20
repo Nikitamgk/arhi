@@ -1,18 +1,14 @@
 #include "../include/myTerm.h"
-/// @brief go to
-/// @param rows Y
-/// @param cols X
-/// @return 0 - good -1 - bad
 int
-mt_gotoXY(int col, int row)
+mt_gotoXY (int col, int row)
 {
-    if((col == 0) || (row == 0))
-        return -1;
-    int X, Y;
-    if(mt_getscreensize(&Y, &X) == 1)
-        return -1;
-    if((Y < row) || (X < col))
-        return -1;
-    printf("\033[%d;%dH", row, col);
-    return 0;
+  if ((col == 0) || (row == 0))
+    return -1;
+  int X, Y;
+  if (mt_getscreensize (&Y, &X) == 1)
+    return -1;
+  if ((Y < row) || (X < col))
+    return -1;
+  printf ("\033[%d;%dH", row, col);
+  return 0;
 }

@@ -28,7 +28,7 @@ $(OBJ_DIR):
 	mkdir -p $@
 
 $(APP_PATH): $(APP_OBJECTS) $(LIB_PATH)
-	$(CC) $(CFLAGS) $^ -o $@ 
+	$(CC) $(CFLAGS) $(LIB_PATH) $(OBJ_DIR) $^ -o $@ 
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.$(SRC_EXT)
 	$(CC) -MMD -c $(CFLAGS) $< -o $@

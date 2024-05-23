@@ -1,4 +1,6 @@
 #pragma once
+#ifndef cnsl
+#define cnsl
 #include <stdio.h>
 #include <sys/ioctl.h>
 
@@ -28,3 +30,4 @@ int mt_setdefaultcolor ();
 int mt_set_cursorvisible (int value);
 
 int mt_delline ();
+#endif

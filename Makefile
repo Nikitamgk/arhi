@@ -2,5 +2,5 @@ all:
 	$(MAKE) -C mySimpleComputer
 	$(MAKE) -C console
 clean:
-	$(MAKE) clean mySimpleComputer
-	$(MAKE) clean console
+	$(MAKE) clean -C mySimpleComputer
+	$(MAKE) clean -C console

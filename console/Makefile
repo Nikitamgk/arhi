@@ -9,8 +9,9 @@ OBJ_DIR = obj
 BIN_DIR = bin
 
 APP_PATH = $(BIN_DIR)/$(APP_NAME)
-APP_SOURCES = $(wildcard $(SRC_DIR)/*.$(SRC_EXT)) ../mySimpleComputer/bin/$(SC_LIB).a
-APP_OBJECTS = $(APP_SOURCES:%.$(SRC_EXT)=$(OBJ_DIR)/%.o)
+APP_SOURCES = $(wildcard $(SRC_DIR)/*.$(SRC_EXT)) 
+SC_OBJ = $(wildcard ../mySimpleComputer/obj/*.o)
+APP_OBJECTS = $(patsubst %.c, %.o, $(APP_SOURCES))
 DEPS = $(APP_OBJECTS:.o=.d)
 
 .PHONY: all clean
@@ -29,7 +30,7 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.$(SRC_EXT)
 	$(CC) -MMD -c $(CFLAGS) $< -o $@
 
 $(APP_PATH): $(APP_OBJECTS) $(LIB_PATH)
-	$(CC) $(CFLAGS) $(APP_SOURCES) $^ -o $@ 
+	$(CC) $(CFLAGS) test.c $^ -o $@ $(SC_LIB).a $(SC_OBJ) $(APP_OBJECTS)
 
 clean:
 	rm -rf $(OBJ_DIR) $(BIN_DIR)

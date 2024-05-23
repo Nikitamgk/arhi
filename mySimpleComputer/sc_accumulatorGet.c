@@ -1,4 +1,4 @@
-#include "../include/mySimpleComputer.h"
+#include "main.c"
 int
 sc_accumulatorGet (int *value)
 {

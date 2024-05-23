@@ -1,4 +1,4 @@
-#include "../include/mySimpleComputer.h"
+#include "main.c"
 int
 sc_MemoryGet (int address, int *value)
 {

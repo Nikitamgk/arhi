@@ -1,4 +1,4 @@
-#include "../include/mySimpleComputer.h"
+#include "main.c"
 int
 sc_commandEncode (int sign, int command, int operand, int *value)
 {

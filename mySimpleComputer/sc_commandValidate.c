@@ -1,10 +1,10 @@
-#include "main.c"
+#include "../include/mySimpleComputer.h"
 int
 sc_commandValidate (int command)
 {
   int temp = command;
-  command << 1;
-  command >> 8;
+  command = command << 1;
+  command = command >> 8;
   for (int i = 0; i <= 40; i++)
     {
       if (command == commands[i])

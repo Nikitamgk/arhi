@@ -24,11 +24,11 @@ $(BIN_DIR):
 $(OBJ_DIR):
 	mkdir -p $@
 
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.$(SRC_EXT)
+	$(CC) -MMD -c $(CFLAGS) $< -o $@
+
 $(APP_PATH): $(APP_OBJECTS)
 	ar rcs $@ $^
-
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.$(SRC_EXT)
-	$(CC) -MD -c $(CFLAGS) $< -o $@
 
 clean:
 	rm -rf $(OBJ_DIR) $(BIN_DIR)

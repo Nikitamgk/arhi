@@ -1,4 +1,4 @@
-#include "main.c"
+#include "../include/mySimpleComputer.h"
 int
 sc_regInit ()
 {
@@ -13,4 +13,5 @@ sc_regInit ()
           flags = flags & (~OFF);
         }
     }
+    return 0;
 }

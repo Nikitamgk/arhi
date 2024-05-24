@@ -1,8 +1,8 @@
-#include "main.c"
+#include "../include/mySimpleComputer.h"
 int
 sc_accumulatorSet (int value)
 {
-  if (value > 127 || value < -127)
+  if (value > 128 || value < -128)
     return -1;
   else
     {

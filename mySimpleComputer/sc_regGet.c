@@ -1,4 +1,4 @@
-#include "main.c"
+#include "../include/mySimpleComputer.h"
 int
 sc_regGet (int registr, int *value)
 {
@@ -7,8 +7,8 @@ sc_regGet (int registr, int *value)
   else
     {
       int temp = flags;
-      temp << 15 - registr;
-      temp >> 15 + registr;
+      temp = temp << (15 - registr);
+      temp = temp >> (15 + registr);
       *value = temp;
       return 0;
     }

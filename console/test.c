@@ -1,5 +1,37 @@
 #include "console.h"
 
+void
+printCell (int address)
+{
+  int *sign = malloc (sizeof (int));
+  int *command = malloc (sizeof (int));
+  int *operand = malloc (sizeof (int));
+  sc_commandDecode (memory[address], sign, command, operand);
+  printf ("sign = %d\n command = %d\n operand = %d\n", *sign, *command, *operand);
+}
+
+void
+printCounters ()
+{
+	printf ("Counter = %d \n", ICount);
+}
+
+void
+printAccumulator ()
+{
+	printf ("Accumulator = %d \n", Accum);
+}
+
+void
+printFlags ()
+{
+    printf("Flag 0 is: %s \n", (flags&IT_MASK)== IT_MASK ? "I" : "_");
+    printf("Flag 1 is: %s \n", (flags&MC_MASK)== MC_MASK ? "M" : "_");
+    printf("Flag 2 is: %s \n", (flags&SF_MASK)== SF_MASK ? "S" : "_");
+    printf("Flag 3 is: %s \n", (flags&ZD_MASK)== ZD_MASK ? "Z" : "_");
+    printf("Flag 4 is: %s \n", (flags&OO_MASK)== OO_MASK ? "O" : "_");
+}
+
 int
 main ()
 {
@@ -12,7 +44,7 @@ main ()
 
   // Установка произвольных значений в оперативную память и вывод ее
   // содержимого (в данном примере установим все ячейки памяти в значение 5)
-  for (int i = 7; i < 26; i++)
+  for (int i = 7; i < 52; i++)
     {
       sc_MemorySet (i, 5);
     }
@@ -20,10 +52,6 @@ main ()
   // Вывод содержимого оперативной памяти
   for (int i = 0; i < MEMORY_SIZE; i++)
     {
-      if ((i) % 10 == 0)
-        {
-          printf ("\n");
-        }
       printCell (i);
     }
   printf ("\n");

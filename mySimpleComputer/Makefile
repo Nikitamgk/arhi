@@ -25,7 +25,7 @@ $(OBJ_DIR):
 	mkdir -p $@
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.$(SRC_EXT)
-	$(CC) -MMD -c $(CFLAGS) $< -o $@
+	$(CC) -MMD -fPIC -c $(CFLAGS) $< -o $@
 
 $(APP_PATH): $(APP_OBJECTS)
 	ar rcs $@ $^

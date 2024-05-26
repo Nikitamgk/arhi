@@ -1,5 +1,5 @@
 APP_NAME = libsc.a
-CFLAGS = -I ../include -Wall
+CFLAGS = -I../include -Wall -Wextra -Werror
 CC = gcc
 SRC_EXT = c
 
@@ -14,7 +14,7 @@ DEPS = $(APP_OBJECTS:.o=.d)
 
 .PHONY: all clean
 
-all: $(BIN_DIR) $(OBJ_DIR) $(LIB_PATH) $(APP_PATH)
+all: $(BIN_DIR) $(OBJ_DIR) $(APP_PATH)
 
 -include $(DEPS)
 
@@ -24,11 +24,11 @@ $(BIN_DIR):
 $(OBJ_DIR):
 	mkdir -p $@
 
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.$(SRC_EXT)
-	$(CC) -MMD -fPIC -c $(CFLAGS) $< -o $@
-
 $(APP_PATH): $(APP_OBJECTS)
 	ar rcs $@ $^
+
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.$(SRC_EXT)
+	$(CC) -MMD -c $(CFLAGS) $(CPPFLAGS) $< -o $@
 
 clean:
 	rm -rf $(OBJ_DIR) $(BIN_DIR)

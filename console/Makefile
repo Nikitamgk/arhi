@@ -1,17 +1,17 @@
 APP_NAME = pr02
+LIB_NAME = libsc
+CFLAGS = -Wall
 CC = gcc
-CFLAGS = -Wall -I ../include
-SRC = c
-SC_LIB = libsc
+SRC_EXT = c
 
 SRC_DIR = .
 OBJ_DIR = obj
 BIN_DIR = bin
 
 APP_PATH = $(BIN_DIR)/$(APP_NAME)
-APP_SOURCES = $(wildcard print*.c) 
-SC_LIB_SRC = ../mySimpleComputer/bin
-APP_OBJECTS = $(patsubst %.c, %.o, $(APP_SOURCES))
+LIB_PATH = ../mySimpleComputer/bin/$(LIB_NAME).a
+APP_SOURCES = $(wildcard $(SRC_DIR)/*.$(SRC_EXT))
+APP_OBJECTS = $(APP_SOURCES:$(SRC_DIR)/%.$(SRC_EXT)=$(OBJ_DIR)/%.o)
 DEPS = $(APP_OBJECTS:.o=.d)
 
 .PHONY: all clean
@@ -26,11 +26,11 @@ $(BIN_DIR):
 $(OBJ_DIR):
 	mkdir -p $@
 
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.$(SRC_EXT)
-	$(CC) -MMD -fPIC -c $< $(CFLAGS) -o $@
+$(APP_PATH): $(APP_OBJECTS) $(LIB_PATH)
+	$(CC) $(CFLAGS) $(CPPFLAGS) $^ -o $@ $(LDFLAGS) $(LDLIBS)
 
-$(APP_PATH) : $(APP_OBJECTS) $(LIB_PATH)
-	$(CC) $(CFLAGS) -fPIC test.c $(SC_LIB_SRC)/$(SC_LIB).a -o $@
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.$(SRC_EXT)
+	$(CC) -MMD -c $(CFLAGS) $(CPPFLAGS) $< $(LIB_PATH) -o $@
 
 clean:
-	rm -rf $(OBJ_DIR) $(BIN_DIR) $(APP_OBJECTS) console.a
+	rm -rf $(OBJ_DIR) $(BIN_DIR)

@@ -1,5 +1,6 @@
+#include <mySimpleComputer.h>
 #include "console.h"
-
+/* 
 void
 printCell (int address)
 {
@@ -31,7 +32,7 @@ printFlags ()
     printf("Flag 3 is: %s \n", (flags&ZD_MASK)== ZD_MASK ? "Z" : "_");
     printf("Flag 4 is: %s \n", (flags&OO_MASK)== OO_MASK ? "O" : "_");
 }
-
+ */
 int
 main ()
 {

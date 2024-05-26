@@ -1,6 +1,6 @@
 APP_NAME = pr02
 LIB_NAME = libsc
-CFLAGS = -Wall
+CFLAGS = -Wall -I ../include
 CC = gcc
 SRC_EXT = c
 
@@ -16,7 +16,7 @@ DEPS = $(APP_OBJECTS:.o=.d)
 
 .PHONY: all clean
 
-all: $(BIN_DIR) $(OBJ_DIR) $(LIB_PATH) $(APP_PATH)
+all: $(BIN_DIR) $(OBJ_DIR) $(APP_PATH)
 
 -include $(DEPS)
 
@@ -26,11 +26,8 @@ $(BIN_DIR):
 $(OBJ_DIR):
 	mkdir -p $@
 
-$(APP_PATH): $(APP_OBJECTS) $(LIB_PATH)
-	$(CC) $(CFLAGS) $(CPPFLAGS) $^ -o $@ $(LDFLAGS) $(LDLIBS)
-
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.$(SRC_EXT)
-	$(CC) -MMD -c $(CFLAGS) $(CPPFLAGS) $< $(LIB_PATH) -o $@
+$(APP_PATH):
+	$(CC) $(CFLAGS) $(LIB_PATH) test.c -o $@
 
 clean:
 	rm -rf $(OBJ_DIR) $(BIN_DIR)

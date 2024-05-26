@@ -13,5 +13,5 @@ sc_regInit ()
           flags = flags & (~OFF);
         }
     }
-    return 0;
+  return 0;
 }

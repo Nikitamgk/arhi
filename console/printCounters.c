@@ -2,6 +2,6 @@
 void
 printCounters ()
 {
-	printf ("Counter = %d \n", ICount);
-	return;
+  printf ("Counter = %d \n", ICount);
+  return;
 }

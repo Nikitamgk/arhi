@@ -2,6 +2,6 @@
 void
 printAccumulator ()
 {
-	printf ("Accumulator = %d \n", Accum);
-	return;
+  printf ("Accumulator = %d \n", Accum);
+  return;
 }

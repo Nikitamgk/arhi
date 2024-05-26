@@ -1,6 +1,6 @@
-#include <mySimpleComputer.h>
 #include "console.h"
-/* 
+
+/*
 void
 printCell (int address)
 {
@@ -8,19 +8,20 @@ printCell (int address)
   int *command = malloc (sizeof (int));
   int *operand = malloc (sizeof (int));
   sc_commandDecode (memory[address], sign, command, operand);
-  printf ("sign = %d\n command = %d\n operand = %d\n", *sign, *command, *operand);
+  printf ("sign = %d\n command = %d\n operand = %d\n", *sign, *command,
+*operand);
 }
 
 void
 printCounters ()
 {
-	printf ("Counter = %d \n", ICount);
+        printf ("Counter = %d \n", ICount);
 }
 
 void
 printAccumulator ()
 {
-	printf ("Accumulator = %d \n", Accum);
+        printf ("Accumulator = %d \n", Accum);
 }
 
 void

@@ -1,9 +1,9 @@
 #ifndef CNSL
 #define CNSL
 #pragma once
+#include "../include/myBigChars.h"
 #include "../include/mySimpleComputer.h"
 #include "../include/myTerm.h"
-#include "../include/myBigChars.h"
 
 #define memoryCell = 6;
 #define FLAGS = 16;

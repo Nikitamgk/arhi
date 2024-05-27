@@ -8,29 +8,29 @@ printCell (int address)
   int *operand = malloc (sizeof (int));
   sc_commandDecode (memory[address], sign, command, operand);
   printf ("sign = %d\n command = %d\n operand = %d\n", *sign, *command,
-*operand);
+          *operand);
 }
 
 void
 printCounters ()
 {
-        printf ("Counter = %d \n", ICount);
+  printf ("Counter = %d \n", ICount);
 }
 
 void
 printAccumulator ()
 {
-        printf ("Accumulator = %d \n", Accum);
+  printf ("Accumulator = %d \n", Accum);
 }
 
 void
 printFlags ()
 {
-    printf("Flag 0 is: %s \n", (flags&IT_MASK)== IT_MASK ? "I" : "_");
-    printf("Flag 1 is: %s \n", (flags&MC_MASK)== MC_MASK ? "M" : "_");
-    printf("Flag 2 is: %s \n", (flags&SF_MASK)== SF_MASK ? "S" : "_");
-    printf("Flag 3 is: %s \n", (flags&ZD_MASK)== ZD_MASK ? "Z" : "_");
-    printf("Flag 4 is: %s \n", (flags&OO_MASK)== OO_MASK ? "O" : "_");
+  printf ("Flag 0 is: %s \n", (flags & IT_MASK) == IT_MASK ? "I" : "_");
+  printf ("Flag 1 is: %s \n", (flags & MC_MASK) == MC_MASK ? "M" : "_");
+  printf ("Flag 2 is: %s \n", (flags & SF_MASK) == SF_MASK ? "S" : "_");
+  printf ("Flag 3 is: %s \n", (flags & ZD_MASK) == ZD_MASK ? "Z" : "_");
+  printf ("Flag 4 is: %s \n", (flags & OO_MASK) == OO_MASK ? "O" : "_");
 }
 
 int

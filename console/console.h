@@ -27,4 +27,8 @@ void printAccumulator ();
 void printCounters ();
 
 void printTerm ();
+
+void printDecodedCommand ();
+
+void printCommand ();
 #endif

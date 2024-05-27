@@ -18,7 +18,7 @@ DEPS = $(APP_OBJECTS:.o=.d)
 
 .PHONY: all clean
 
-all: $(BIN_DIR) $(OBJ_DIR) $(APP_OBJECTS) $(APP_PATH)
+all: $(BIN_DIR) $(OBJ_DIR) $(CNSL_PATH) $(APP_OBJECTS) $(APP_PATH)
 
 -include $(DEPS)
 
@@ -28,11 +28,14 @@ $(BIN_DIR):
 $(OBJ_DIR):
 	mkdir -p $@
 
-$(APP_OBJECTS) : $(APP_SOURCES) 
-	$(CC) -c $(CFLAGS) $< -o $@
+$(APP_PATH): $(LIB_PATH) $(CNSL_PATH)
+	$(CC) $(CFLAGS) test.c $^ -o $@ 
 
-$(APP_PATH): $(LIB_PATH) $(APP_OBJECTS)
-	$(CC) $(CFLAGS) $(LIB_PATH) $(APP_OBJECTS) -o $@
+$(CNSL_PATH) : $(APP_OBJECTS)
+	ar rcs $@ $(APP_OBJECTS)
+
+$(APP_OBJECTS): $(APP_SOURCES)
+	$(CC) -MMD -c -Wall -I . $< -o $@
 
 clean:
 	rm -rf $(OBJ_DIR) $(BIN_DIR)

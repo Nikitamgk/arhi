@@ -3,6 +3,7 @@
 #pragma once
 #include "../include/mySimpleComputer.h"
 #include "../include/myTerm.h"
+#include "../include/myBigChars.h"
 
 #define memoryCell = 6;
 #define FLAGS = 16;
@@ -17,6 +18,7 @@
 
 extern int IN_OUT_addres[4];
 extern int IN_OUT_command[4];
+extern int font[18];
 
 void printCell (int address, enum Colors fg, enum Colors bg);
 
@@ -31,4 +33,6 @@ void printTerm ();
 void printDecodedCommand ();
 
 void printCommand ();
+
+void printBigCell ();
 #endif

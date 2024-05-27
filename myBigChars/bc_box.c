@@ -38,9 +38,9 @@ bc_box (int x1, int y1, int x2, int y2, enum Colors box_fg, enum Colors box_bg,
   mt_gotoXY (x1, y2);
   bc_printA (BOXCHAR_DL);
   for (tmp = x1 + 1; tmp < x2; tmp++)
-  {
-    bc_printA (BOXCHAR_HOR);
-  }
+    {
+      bc_printA (BOXCHAR_HOR);
+    }
   bc_printA (BOXCHAR_DR);
   if (header != NULL)
     {

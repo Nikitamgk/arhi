@@ -1,9 +1,9 @@
-#include "../include/mySimpleComputer.h"
+#include <mySimpleComputer.h>
 int
 sc_MemoryLoad (char* filename)
 {
-	FILE *fs;
-	if ((fs == fopen(filename, "r+")) == NULL)
+	FILE *fs = fopen(filename, "r+");
+	if (!fs)
 		return -1;
 	else
 	{

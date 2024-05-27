@@ -1,4 +1,4 @@
-#include "../include/mySimpleComputer.h"
+#include <mySimpleComputer.h>
 int
 sc_MemoryGet (int address, int* value)
 {
@@ -8,7 +8,7 @@ sc_MemoryGet (int address, int* value)
 	}
 	else
 	{
-		*value = memory[address];
+		value = &memory[address];
 		return 0;
 	}
 }

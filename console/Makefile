@@ -11,7 +11,7 @@ OBJ_DIR = obj
 BIN_DIR = bin
 
 APP_PATH = $(BIN_DIR)/$(APP_NAME)
-LIB_PATH = ../mySimpleComputer/bin/$(LIB_SC).a  ../myTerm/bin/$(LIB_MT).a ../myTerm/bin/$(LIB_BC).a
+LIB_PATH = ../mySimpleComputer/bin/$(LIB_SC).a  ../myTerm/bin/$(LIB_MT).a ../myBigChars/bin/$(LIB_BC).a
 APP_SOURCES = $(wildcard $(SRC_DIR)/*.$(SRC_EXT))
 APP_OBJECTS = $(APP_SOURCES:$(SRC_DIR)/%.$(SRC_EXT)=$(OBJ_DIR)/%.o)
 DEPS = $(APP_OBJECTS:.o=.d)

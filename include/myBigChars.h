@@ -4,7 +4,7 @@
 #include <string.h>
 #include <unistd.h>
 
-#define BOXCHAR_REC 'a'
+#define BOXCHAR_REC "a"
 #define BOXCHAR_DR "j"
 #define BOXCHAR_DL "m"
 #define BOXCHAR_UR "k"

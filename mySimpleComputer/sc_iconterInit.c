@@ -2,6 +2,6 @@
 int
 sc_icounterInit ()
 {
-	ICount = 0;
-	return 0;
+  ICount = 0;
+  return 0;
 }

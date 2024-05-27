@@ -7,7 +7,7 @@ main ()
   mt_getscreensize (&rows, &cols);
   if (cols < 92 || rows < 23)
     return -1;
-  memory_init ();
+  sc_MemoryInit ();
   for (int f = 0; f < 128; f++)
     {
       printCell (f, 0, 0);

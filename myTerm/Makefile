@@ -1,5 +1,5 @@
 APP_NAME = libmt.a
-CFLAGS = -I ../include -Wall
+CFLAGS = -I ../include -Wall -Wextra -Werror
 CC = gcc
 SRC_EXT = c
 

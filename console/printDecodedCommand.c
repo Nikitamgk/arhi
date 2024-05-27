@@ -1,5 +1,4 @@
-#include "console.h"
-
+#include <console.h>
 void
 printDecodedCommand (int value)
 {

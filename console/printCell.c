@@ -1,5 +1,4 @@
-#include "console.h"
-
+#include <console.h>
 void
 printCell (int address, enum Colors fg, enum Colors bg)
 {

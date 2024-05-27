@@ -1,6 +1,6 @@
 APP_NAME = pr02
 LIB_NAME = libsc
-CFLAGS = -Wall -I ../include
+CFLAGS = -Wall
 CC = gcc
 SRC_EXT = c
 
@@ -27,10 +27,10 @@ $(OBJ_DIR):
 	mkdir -p $@
 
 $(APP_OBJECTS) : $(APP_SOURCES) 
-	$(CC) -c $(CFLAGS) $< -o $@
+	$(CC) -c $(CFLAGS) -I ../include $< -o $@
 
 $(APP_PATH): $(LIB_PATH) $(APP_OBJECTS)
-	$(CC) $(CFLAGS) $(LIB_PATH) $(APP_OBJECTS) test.c -o $@
+	$(CC) $(CFLAGS) $(LIB_PATH) $(APP_OBJECTS) -o $@
 
 clean:
 	rm -rf $(OBJ_DIR) $(BIN_DIR)

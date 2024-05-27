@@ -1,5 +1,4 @@
-#include "console.h"
-
+#include <console.h>
 void printCell (int address, enum Colors fg, enum Colors bg)
 {
   int x = 1 + 6 * (address%10);

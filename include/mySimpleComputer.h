@@ -12,10 +12,10 @@
 
 #define MEMORY_SIZE 128
 
-int memory[128];
-int flags;
-int Accum;
-int ICount;
+extern int memory[128];
+extern int flags;
+extern int Accum;
+extern int ICount;
 
 int sc_MemoryInit (void);
 

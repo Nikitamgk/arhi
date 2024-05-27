@@ -1,9 +1,9 @@
-#include "../include/mySimpleComputer.h"
+#include <mySimpleComputer.h>
 int
 sc_MemorySave (char *filename)
 {
-  FILE *fp;
-  if ((fp == fopen (filename, "r+")) == NULL)
+  FILE *fp = fopen (filename, "r+");
+  if (!fp)
     return -1;
   else
     {

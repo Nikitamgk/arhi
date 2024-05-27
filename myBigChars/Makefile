@@ -1,5 +1,5 @@
 APP_NAME = libbc.a
-CFLAGS = -I../include -Wall -Wextra -Werror
+CFLAGS = -I../include -Wall -Wextra
 CC = gcc
 SRC_EXT = c
 

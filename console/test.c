@@ -6,7 +6,7 @@ int main()
 	mt_getscreensize(&rows, &cols);
 	if (cols < 90 || rows < 26)
 		return -1;
-  memory_init();
+  sc_MemoryInit();
   mt_clrscrn();
   for(int f = 0; f < 128; f++)
   {

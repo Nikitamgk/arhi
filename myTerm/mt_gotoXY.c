@@ -1,8 +1,4 @@
-#include "../include/myTerm.h"
-/// @brief go to
-/// @param rows Y
-/// @param cols X
-/// @return 0 - good -1 - bad
+#include <myTerm.h>
 int
 mt_gotoXY(int col, int row)
 {

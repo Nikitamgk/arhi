@@ -1,4 +1,4 @@
-#include "../include/myTerm.h"
+#include <myTerm.h>
 int
 mt_gotoXY (int col, int row)
 {

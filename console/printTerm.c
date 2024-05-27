@@ -3,7 +3,7 @@
 void
 printTerm(int addres, int input)
 {
-  if (address > 128 || address < 0)
+  if (addres > 128 || addres < 0)
     return;
   if (input == 1)
   {
@@ -15,11 +15,11 @@ printTerm(int addres, int input)
     IN_OUT_addres[2] = temp;
     IN_OUT_addres[3] = temp_two;
     IN_OUT_addres[4] = temp_three;
-    IN_OUT_addres[0] = address;
+    IN_OUT_addres[0] = addres;
     mt_gotoXY(67,17);
-    printf("%d< ", address);
+    printf("%d< ", addres);
     scanf("%d", &new_value);
-    sc_MemorySet(address, new_value);
+    sc_MemorySet(addres, new_value);
   }
   for(int count = 0; count <= 4; count++)
   {

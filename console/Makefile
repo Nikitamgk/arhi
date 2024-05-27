@@ -1,4 +1,4 @@
-APP_NAME = pr02
+APP_NAME = pr03
 LIB_SC = libsc
 LIB_MT = libmt
 CFLAGS = -Wall -I ../include
@@ -31,7 +31,7 @@ $(APP_OBJECTS) : $(APP_SOURCES)
 	$(CC) -c $(CFLAGS) $< -o $@
 
 $(APP_PATH): $(LIB_PATH) $(APP_OBJECTS)
-	$(CC) $(CFLAGS) $(LIB_PATH) $(APP_OBJECTS) test.c -o $@
+	$(CC) $(CFLAGS) $(LIB_PATH) $(APP_OBJECTS) -o $@
 
 clean:
 	rm -rf $(OBJ_DIR) $(BIN_DIR)

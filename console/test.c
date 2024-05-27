@@ -17,6 +17,7 @@ int main()
   printFlags();
   printDecodedCommand(memory[0]);
   printCommand();
+  printBigCell();
   for(int t = 0; t < 7; t++)
   {
   int new_adr = rand()%10;
@@ -33,6 +34,6 @@ int main()
   printDecodedCommand(memory[0]);
   printCommand();
   printTerm(0,0);
-  mt_gotoXY(100, 25);
+  printBigCell();
   return 0;
 }

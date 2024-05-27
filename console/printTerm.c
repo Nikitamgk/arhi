@@ -1,5 +1,4 @@
-#include "console.h"
-
+#include <console.h>
 void
 printTerm(int addres, int input)
 {

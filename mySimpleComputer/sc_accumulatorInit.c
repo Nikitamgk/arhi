@@ -1,6 +1,7 @@
-#include "../include/mySimpleComputer.h"
+#include <mySimpleComputer.h>
 int
 sc_accumulatorInit ()
 {
-	Accum = 0;
+  Accum = 0;
+  return 0;
 }

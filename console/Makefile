@@ -30,7 +30,7 @@ $(APP_OBJECTS) : $(APP_SOURCES)
 	$(CC) -c $(CFLAGS) -I ../include $< -o $@
 
 $(APP_PATH): $(LIB_PATH) $(APP_OBJECTS)
-	$(CC) $(CFLAGS) $(LIB_PATH) $(APP_OBJECTS) -o $@
+	$(CC) $(CFLAGS) $(LIB_PATH) $(APP_OBJECTS) test.c -o $@
 
 clean:
 	rm -rf $(OBJ_DIR) $(BIN_DIR)

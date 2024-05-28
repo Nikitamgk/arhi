@@ -11,10 +11,10 @@
 #define OO_MASK 0x100
 #define MEMORY_SIZE 128
 
-extern int memory[128];
-extern int flags;
-extern int Accum;
-extern int ICount;
+int memory[128];
+int flags;
+int Accum;
+int ICount;
 
 int sc_MemoryInit (void);
 int sc_MemorySet (int address, int value);

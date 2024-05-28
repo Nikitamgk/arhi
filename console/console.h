@@ -1,5 +1,5 @@
 #pragma once
-#include "mySimpleComputer.h"
+#include "../include/mySimpleComputer.h"
 
 void printCell (int address);
 void printFlags ();

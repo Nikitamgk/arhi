@@ -6,14 +6,14 @@ main ()
   mt_getscreensize (&rows, &cols);
   if (cols < 90 || rows < 26)
     return -1;
-  generateFont();
+  generateFont ();
   FILE *file = fopen ("font.bin", "rb");
   int read_result;
   bc_bigcharread (fileno (file), (int *)font, 18, &read_result);
   fclose (file);
   sc_MemoryInit ();
   mt_clrscrn ();
-  printMemory();
+  printMemory ();
   printAccumulator ();
   printCounters ();
   printFlags ();

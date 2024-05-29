@@ -1,8 +1,8 @@
 #pragma once
 #include "../include/myBigChars.h"
+#include "../include/myReadKey.h"
 #include "../include/mySimpleComputer.h"
 #include "../include/myTerm.h"
-#include "../include/myReadKey.h"
 #include <locale.h>
 
 #define memoryCell = 6;

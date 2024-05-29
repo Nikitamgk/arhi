@@ -4,7 +4,7 @@ printTerm (int addres, int input)
 {
   if (addres > 128 || addres < 0)
     return;
-  bc_box (65, 19, 75, 25, 7, 0, "IN-OUT", 2, 0);
+  bc_box (66, 19, 78, 25, 7, 0, "IN-OUT", 2, 0);
   if (input == 1)
     {
       int new_value;
@@ -23,7 +23,7 @@ printTerm (int addres, int input)
     }
   for (int count = 0; count <= 4; count++)
     {
-      mt_gotoXY (66, 20 + count);
+      mt_gotoXY (67, 20 + count);
       printf ("%03d> ", IN_OUT_addres[count]);
       printf ("%04d", memory[IN_OUT_addres[count]]);
     }

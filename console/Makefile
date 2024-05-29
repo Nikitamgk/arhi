@@ -30,14 +30,14 @@ $(BIN_DIR):
 $(OBJ_DIR):
 	mkdir -p $@
 
-$(APP_PATH): $(LIB_PATH) $(CNSL_PATH)
-	$(CC) $(CFLAGS) test.c $(CNSL_PATH) $^ -o $@ 
+$(APP_PATH): $(CNSL_PATH) $(LIB_PATH) 
+	$(CC) $(CFLAGS) test.c $^ -o $@ 
 
 $(CNSL_PATH): $(APP_OBJECTS)
 	ar rcs $@ $(APP_OBJECTS)
 
 $(APP_OBJECTS): $(APP_SOURCES)
-	$(CC) -MMD -c -Wall -I . $< -o $@
+	$(CC) -MMD -c -Wall -I ../include $< -o $@
 
 clean:
 	rm -rf $(OBJ_DIR) $(BIN_DIR)

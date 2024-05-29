@@ -10,7 +10,7 @@ printAccumulator ()
   int *operand = malloc (sizeof (int));
   sc_commandDecode (Accum, sign, command, operand);
   printf ("sc: ");
-  if (sign == 0)
+  if (*sign == 1)
     printf ("+");
   else
     printf ("-");

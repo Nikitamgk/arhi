@@ -1,25 +1,18 @@
 #include "console.h"
+#include <locale.h>
 void
 drawConsole ()
 {
-  int rows, cols;
-  mt_getscreensize (&rows, &cols);
-  if (cols < 90 || rows < 26)
-    return -1;
-  generateFont ();
-  FILE *file = fopen ("font.bin", "rb");
-  int read_result;
-  bc_bigcharread (fileno (file), (int *)font, 18, &read_result);
-  fclose (file);
-  sc_MemoryInit ();
   mt_clrscrn ();
   printMemory ();
   printAccumulator ();
   printCounters ();
   printFlags ();
-  printDecodedCommand (memory[0]);
+  printDecodedCommand (memory[ICount]);
   printCommand ();
-  printBigCell (memory[1], 65, 9);
+  printBigCell (memory[ICount], 65, 9);
+  setlocale (LC_ALL, ".UTF-8");
+  bc_box (61, 7, 114, 18, 7, 0, "Редактируемая ячейка (увеличенно)", 1, 0);
   printKeys ();
   printTerm (0, 0);
 }

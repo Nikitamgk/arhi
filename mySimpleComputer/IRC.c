@@ -24,12 +24,7 @@ IRC (int signum)
               TACTS = 0;
               waitTacts = 0;
             }
-          if (cacheCheck (memory[ICount]))
-            {
-              waitTacts = 1;
-              TACTS = 1;
-            }
-
+            
           if (!waitTacts)
             CU ();
 

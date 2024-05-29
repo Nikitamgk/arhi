@@ -16,7 +16,7 @@
 #define memroyCellsY = 10;
 
 extern int IN_OUT_addres[4];
-extern int IN_OUT_command[4];
+extern int IN_OUT_arr[4];
 extern int font[18][2];
 extern int interact_mode;
 

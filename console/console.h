@@ -1,5 +1,3 @@
-#ifndef CNSL
-#define CNSL
 #pragma once
 #include "../include/myBigChars.h"
 #include "../include/mySimpleComputer.h"
@@ -35,4 +33,3 @@ void printDecodedCommand ();
 void printCommand ();
 
 void printBigCell ();
-#endif

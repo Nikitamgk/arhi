@@ -4,7 +4,7 @@ printTerm (int addres, int input)
 {
   if (addres > 128 || addres < 0)
     return;
-  bc_box (65, 19, 75, 25, 7, 0, "IN-OUT", 1, 0);
+  bc_box (65, 19, 75, 25, 7, 0, "IN-OUT", 2, 0);
   if (input == 1)
     {
       int new_value;

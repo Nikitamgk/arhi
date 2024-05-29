@@ -27,9 +27,7 @@ handleKeypress (enum keys *key)
   switch (*key)
     {
     case KEY_UP:
-      (ICount <= 9)
-          ? (ICount += (ICount >= 8 ? 110 : 120))
-          : (ICount -= 10);
+      (ICount <= 9) ? (ICount += (ICount >= 8 ? 110 : 120)) : (ICount -= 10);
       break;
     case KEY_RIGHT:
       (!((ICount + 1) % (ICount >= 120 ? 8 : 10)))
@@ -37,14 +35,10 @@ handleKeypress (enum keys *key)
           : (ICount += 1);
       break;
     case KEY_DOWN:
-      (ICount >= 118)
-          ? (ICount -= (ICount < 120 ? 110 : 120))
-          : (ICount += 10);
+      (ICount >= 118) ? (ICount -= (ICount < 120 ? 110 : 120)) : (ICount += 10);
       break;
     case KEY_LEFT:
-      (!(ICount % 10))
-          ? (ICount += (ICount >= 120 ? 7 : 9))
-          : (ICount -= 1);
+      (!(ICount % 10)) ? (ICount += (ICount >= 120 ? 7 : 9)) : (ICount -= 1);
       break;
 
     case KEY_L:

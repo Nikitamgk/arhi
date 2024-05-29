@@ -1,6 +1,6 @@
 #include "console.h"
-int
-main ()
+void
+drawConsole ()
 {
   int rows, cols;
   mt_getscreensize (&rows, &cols);
@@ -21,20 +21,5 @@ main ()
   printCommand ();
   printBigCell (memory[1], 65, 9);
   printKeys ();
-  for (int t = 0; t < 7; t++)
-    {
-      int new_adr = rand () % 10;
-      printTerm (new_adr, 1);
-    }
-  mt_clrscrn ();
-  printMemory ();
-  printAccumulator ();
-  printCounters ();
-  printFlags ();
-  printDecodedCommand (memory[0]);
-  printCommand ();
   printTerm (0, 0);
-  printBigCell (memory[1], 67, 9);
-  printKeys ();
-  return 0;
 }

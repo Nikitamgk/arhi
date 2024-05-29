@@ -14,8 +14,8 @@ printAccumulator ()
     printf ("+");
   else
     printf ("-");
-  printf ("%02d%02d ", *command, *operand);
+  printf ("%02d%02d    ", *command, *operand);
   printf (" hex:%04X ", Accum);
-  bc_box (61, 1, 82, 3, 7, 0, "Аккумулятор", 1, 0);
+  bc_box (61, 1, 86, 3, 7, 0, "Аккумулятор", 1, 0);
   return;
 }

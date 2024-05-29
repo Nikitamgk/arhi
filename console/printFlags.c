@@ -2,7 +2,7 @@
 void
 printFlags ()
 {
-  mt_gotoXY(85, 2);
+  mt_gotoXY (85, 2);
   printf (" %s ", (flags & IT_MASK) == IT_MASK ? "I" : "_");
   printf ("%s ", (flags & MC_MASK) == MC_MASK ? "M" : "_");
   printf ("%s ", (flags & SF_MASK) == SF_MASK ? "S" : "_");

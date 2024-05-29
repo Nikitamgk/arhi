@@ -1,7 +1,7 @@
+#include <myBigChars.h>
+#include <myReadKey.h>
 #include <mySimpleComputer.h>
 #include <myTerm.h>
-#include <myReadKey.h>
-#include <myBigChars.h>
 #include <signal.h>
 
 void
@@ -24,7 +24,7 @@ IRC (int signum)
               TACTS = 0;
               waitTacts = 0;
             }
-            
+
           if (!waitTacts)
             CU ();
 

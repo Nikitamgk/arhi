@@ -1,7 +1,7 @@
+#include <myBigChars.h>
+#include <myReadKey.h>
 #include <mySimpleComputer.h>
 #include <myTerm.h>
-#include <myReadKey.h>
-#include <myBigChars.h>
 #include <signal.h>
 
 int
@@ -30,7 +30,6 @@ ALU (int command, int operand)
     case MUL:
       Accum = (Accum * memory[operand]) & 0x7FFF;
       break;
-
     }
   if ((Accum > 0x7FFF) || (Accum < 0))
     {

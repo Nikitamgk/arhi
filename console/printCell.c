@@ -1,4 +1,6 @@
 #include "console.h"
+#include <myTerm.h>
+#include <mySimpleComputer.h>
 void
 printCell (int address, enum Colors fg, enum Colors bg)
 {

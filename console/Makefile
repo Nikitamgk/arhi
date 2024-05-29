@@ -35,10 +35,10 @@ $(CON_VAR_OBJ) : $(CON_VAR)
 	$(CC) -MMD -c $(CFLAGS) $^ -o $@
 
 $(APP_PATH): $(LIB_PATH) $(CNSL_PATH)
-	$(CC) $(CFLAGS) test.c $^ -o $@ 
+	$(CC) $(CFLAGS) test.c $(CNSL_PATH) $(LIB_PATH) -o $@ 
 
 $(CNSL_PATH) : $(APP_OBJECTS) $(CON_VAR_OBJ)
-	ar rcs $@ $(APP_OBJECTS)
+	ar rcs $@ $^
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.$(SRC_EXT)
 	$(CC) -MMD -c $(CFLAGS) $^ -o $@

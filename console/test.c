@@ -7,11 +7,6 @@ main (int argv, char *argc[])
 {
   if (consoleInitial (argv, argc))
     return 1;
-  FILE *file = fopen ("font.bin", "rb");
-  int read_result;
-  bc_bigcharread (fileno (file), (int *)font, 18, &read_result);
-  fclose (file);
-
   mt_clrscrn ();
 
   // Инициализация памяти, регистров и аккумулятора

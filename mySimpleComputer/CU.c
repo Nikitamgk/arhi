@@ -21,8 +21,8 @@ CU ()
       sc_regSet (IT_MASK, 1);
       return;
     }
-  if (command == ADD || command == SUB || command == DIVIDE || command == MUL
-    )
+  if (command == ADD || command == SUB || command == DIVIDE 
+      || command == MUL)
     {
       if (ALU (command, operand) != 0)
         sc_regSet (IT_MASK, 1);

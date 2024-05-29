@@ -1,15 +1,14 @@
+#include <myBigChars.h>
+#include <myReadKey.h>
 #include <mySimpleComputer.h>
 #include <myTerm.h>
-#include <myReadKey.h>
-#include <myBigChars.h>
 #include <signal.h>
 
 void
 CU ()
 {
   int operand, read, sign, command;
-  if (sc_commandDecode (memory[ICount], &sign, &command, &operand)
-      != 0)
+  if (sc_commandDecode (memory[ICount], &sign, &command, &operand) != 0)
     {
       sc_regSet (MC_MASK, 1);
       sc_regSet (IT_MASK, 1);
@@ -21,8 +20,7 @@ CU ()
       sc_regSet (IT_MASK, 1);
       return;
     }
-  if (command == ADD || command == SUB || command == DIVIDE 
-      || command == MUL)
+  if (command == ADD || command == SUB || command == DIVIDE || command == MUL)
     {
       if (ALU (command, operand) != 0)
         sc_regSet (IT_MASK, 1);

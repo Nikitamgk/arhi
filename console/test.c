@@ -1,4 +1,5 @@
 #include "console.h"
+#include <locale.h>
 int
 main ()
 {
@@ -19,6 +20,7 @@ main ()
   printFlags ();
   printDecodedCommand (memory[0]);
   printCommand ();
+  setlocale (LC_ALL, ".utf-8");
   printBigCell (memory[1], 67, 9);
   for (int t = 0; t < 7; t++)
     {

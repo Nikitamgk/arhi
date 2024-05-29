@@ -8,5 +8,6 @@ printFlags ()
   printf ("%s ", (flags & SF_MASK) == SF_MASK ? "S" : "_");
   printf ("%s ", (flags & ZD_MASK) == ZD_MASK ? "Z" : "_");
   printf ("%s ", (flags & OO_MASK) == OO_MASK ? "O" : "_");
+  bc_box (83, 1, 96, 3, 7, 0, "Регистр флагов", 1, 0);
   return;
 }

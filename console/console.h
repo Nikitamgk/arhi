@@ -16,7 +16,7 @@
 
 extern int IN_OUT_addres[4];
 extern int IN_OUT_command[4];
-extern int font[18];
+extern int font[18][2];
 
 void printCell (int address, enum Colors fg, enum Colors bg);
 
@@ -26,10 +26,14 @@ void printAccumulator ();
 
 void printCounters ();
 
-void printTerm ();
+void printTerm (int value, int input);
 
-void printDecodedCommand ();
+void printDecodedCommand (int value);
 
 void printCommand ();
 
-void printBigCell ();
+void printBigCell (int cell, int x, int y);
+
+void printMemory ();
+
+int generateFont ();

@@ -17,6 +17,8 @@ CNSL_PATH = $(BIN_DIR)/$(CNSL_NAME)
 APP_SOURCES = $(wildcard $(SRC_DIR)/print*.$(SRC_EXT))
 CON_VAR = variables.c
 CON_VAR_OBJ = $(OBJ_DIR)/variables.o
+FONT_VAR = font.c
+FONT_OBJ = $(OBJ_DIR)/font.o
 APP_OBJECTS = $(APP_SOURCES:$(SRC_DIR)/%.$(SRC_EXT)=$(OBJ_DIR)/%.o)
 DEPS = $(APP_OBJECTS:.o=.d)
 
@@ -36,9 +38,12 @@ $(CON_VAR_OBJ) : $(CON_VAR)
 	$(CC) -MMD -c $(CFLAGS) $^ -o $@
 
 $(APP_PATH): $(LIB_PATH) $(CNSL_PATH)
-	$(CC) $(CFLAGS) test.c $(CNSL_PATH) $(LIB_PATH) -o $@ 
+	$(CC) $(CFLAGS) -g test.c $(CNSL_PATH) $(LIB_PATH) -o $@ 
 
-$(CNSL_PATH) : $(APP_OBJECTS) $(CON_VAR_OBJ)
+$(FONT_OBJ) : $(FONT_VAR)
+	$(CC) -MMD -c $(CFLAGS) $^ -o $@
+
+$(CNSL_PATH) : $(APP_OBJECTS) $(CON_VAR_OBJ) $(FONT_OBJ)
 	ar rcs $@ $^
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.$(SRC_EXT)

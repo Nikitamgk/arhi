@@ -10,7 +10,7 @@ drawConsole ()
   printFlags ();
   printDecodedCommand (memory[ICount]);
   printCommand ();
-FILE *file = fopen ("font.bin", "rb");
+  FILE *file = fopen ("font.bin", "rb");
   int read_result;
   bc_bigcharread (fileno (file), (int *)font, 18, &read_result);
   fclose (file);

@@ -1,8 +1,6 @@
-#ifndef CNSL
-#define CNSL
 #pragma once
-#include "../include/mySimpleComputer.h"
-#include "../include/myTerm.h"
+#include <mySimpleComputer.h>
+#include <myTerm.h>
 
 #define memoryCell = 6;
 #define FLAGS = 16;
@@ -31,4 +29,3 @@ void printDecodedCommand ();
 void printCommand ();
 
 void printTerm ();
-#endif

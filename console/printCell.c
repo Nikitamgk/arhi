@@ -2,7 +2,7 @@
 void
 printCell (int address, enum Colors fg, enum Colors bg)
 {
-  int x = 1 + 6 * (address % 10);
+  int x = 2 + 6 * (address % 10);
   int *sign = malloc (sizeof (int));
   int *command = malloc (sizeof (int));
   int *operand = malloc (sizeof (int));

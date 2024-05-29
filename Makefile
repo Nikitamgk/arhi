@@ -10,3 +10,9 @@ clean:
 	$(MAKE) clean -C myTerm
 	$(MAKE) clean -C myBigChars
 	$(MAKE) clean -C myReadKey
+	$(MAKE) clean -C simpleassembler
+	rm -rf result.o
+as:
+	$(MAKE) -C simpleassembler
+run: 
+	$(MAKE) run -C simpleassembler 

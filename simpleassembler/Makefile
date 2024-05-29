@@ -1,1 +1,34 @@
-simpleassembler: main.c; gcc -o simpleassembler main.c
+APP_NAME = assembler
+CFLAGS = 
+CC = gcc
+SRC_EXT = c
+
+SRC_DIR = .
+OBJ_DIR = obj
+BIN_DIR = bin
+
+APP_PATH = $(BIN_DIR)/$(APP_NAME)
+APP_SOURCES = $(wildcard $(SRC_DIR)/*.$(SRC_EXT))
+APP_OBJECTS = $(APP_SOURCES:$(SRC_DIR)/%.$(SRC_EXT)=$(OBJ_DIR)/%.o)
+DEPS = $(APP_OBJECTS:.o=.d)
+
+.PHONY: all clean
+
+all: $(BIN_DIR) $(OBJ_DIR) $(APP_PATH)
+
+-include $(DEPS)
+
+$(BIN_DIR):
+	mkdir -p $@
+
+$(OBJ_DIR):
+	mkdir -p $@
+
+$(APP_PATH): $(APP_SOURCES) 
+	$(CC) $(CFLAGS) $^ -o $@
+
+clean:
+	rm -rf $(OBJ_DIR) $(BIN_DIR)
+
+run:
+	./bin/assembler sat assembler.sa ../result.o

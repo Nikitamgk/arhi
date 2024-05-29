@@ -1,6 +1,4 @@
 #include "console.h"
-#include <myTerm.h>
-#include <mySimpleComputer.h>
 void
 printCommand ()
 {

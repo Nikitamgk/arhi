@@ -1,9 +1,4 @@
 #include "console.h"
-#include <myTerm.h>
-#include <mySimpleComputer.h>
-int IN_OUT_addres[4] = { 0 };
-int IN_OUT_arr[4] = { 0 };
-
 void
 printTerm (int addres, int input)
 {

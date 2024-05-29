@@ -1,5 +1,4 @@
 #include "console.h"
-#include <myTerm.h>
 void
 printFlags ()
 {

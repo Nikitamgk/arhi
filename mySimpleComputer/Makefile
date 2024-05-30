@@ -28,7 +28,7 @@ $(APP_PATH): $(APP_OBJECTS)
 	ar rcs $@ $^
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.$(SRC_EXT)
-	$(CC) -MMD -c $(CFLAGS) $(CPPFLAGS) $< -o $@
+	$(CC) -MMD -g -c $(CFLAGS) $(CPPFLAGS) $< -o $@
 
 clean:
 	rm -rf $(OBJ_DIR) $(BIN_DIR)

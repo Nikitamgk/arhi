@@ -14,8 +14,8 @@
 #define clavs = 17;
 #define memroyCellsY = 10;
 
-extern int IN_OUT_addres[4];
-extern int IN_OUT_arr[4];
+extern int IN_OUT_addres[5];
+extern int IN_OUT_arr[5];
 extern int font[18][2];
 extern int interact_mode;
 

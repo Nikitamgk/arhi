@@ -48,7 +48,7 @@ $(CNSL_PATH) : $(APP_OBJECTS) $(CON_VAR_OBJ) $(FONT_OBJ)
 	ar rcs $@ $^
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.$(SRC_EXT)
-	$(CC) -MMD -c $(CFLAGS) $^ -o $@
+	$(CC) -MMD -g -c $(CFLAGS) $^ -o $@
 
 clean:
 	rm -rf $(OBJ_DIR) $(BIN_DIR)

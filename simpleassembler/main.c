@@ -83,7 +83,6 @@ read_instructions (const char *filename)
         {
           int cmd = get_command (command);
           memory[address] = value | cmd << 7;
-          // printf ("COOL: %d %s %d\n", address, command, value);
         }
       else
         {

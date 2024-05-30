@@ -14,5 +14,5 @@ clean:
 	rm -rf result.o
 as:
 	$(MAKE) -C simpleassembler
-run: 
+run:  as
 	$(MAKE) run -C simpleassembler 

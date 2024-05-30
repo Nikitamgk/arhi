@@ -6,7 +6,7 @@ loadMemory ()
   printf ("Enter load file name: ");
   fgets (filename, 3, stdin);
   mt_clrscrn ();
-  mt_gotoXY (0, 26);
+  mt_gotoXY (1, 27);
   filename[strlen (filename) - 1] = '\0';
   if (sc_MemoryLoad (filename))
     {

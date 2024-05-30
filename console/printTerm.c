@@ -20,7 +20,7 @@ printTerm (int addres, int input)
       IN_OUT_addres[0] = addres;
       IN_OUT_arr[0] = new_value;
     }
-  for (int count = 0; count <= 4; count++)
+  for (int count = 0; count < 5; count++)
     {
       mt_gotoXY (68, 20 + count);
       printf ("%03d> ", IN_OUT_addres[count]);

@@ -7,7 +7,7 @@ saveMemory ()
   printf ("Enter save file name: ");
   fgets (filename, 101, stdin);
   mt_clrscrn ();
-  mt_gotoXY (0, 26);
+  mt_gotoXY (1, 27);
   filename[strlen (filename) - 1] = '\0';
 
   if (sc_MemorySave (filename))

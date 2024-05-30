@@ -31,7 +31,7 @@ ALU (int command, int operand)
       Accum = (Accum * memory[operand]) & 0x7FFF;
       break;
 
-      case CHL: // Дополнительное
+    case CHL: // Дополнительное
       Accum = (memory[operand] << 1) & 0x7FFF;
       break;
     }

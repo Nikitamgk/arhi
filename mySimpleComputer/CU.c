@@ -75,7 +75,7 @@ CU ()
             sc_icounterSet (operand - 1);
           break;
 
-          case JNS: // Дополнительное
+        case JNS: // Дополнительное
           if ((!(Accum >> 14) & 1) && Accum != 0)
             sc_icounterSet (operand - 1);
           break;

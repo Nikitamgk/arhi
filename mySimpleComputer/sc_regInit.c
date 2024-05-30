@@ -2,16 +2,7 @@
 int
 sc_regInit ()
 {
-  for (int i = 0; i <= 2; i++)
-    {
-      if (i == 2)
-        {
-          flags = ~flags & OFF;
-        }
-      else
-        {
-          flags = flags & (~OFF);
-        }
-    }
+flags = 0;
+  flags = flags | IT_MASK;
   return 0;
 }

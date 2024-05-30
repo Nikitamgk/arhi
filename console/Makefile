@@ -1,4 +1,4 @@
-APP_NAME = pr04
+APP_NAME = course
 LIB_SC = libsc
 LIB_MT = libmt
 LIB_BC = libbc

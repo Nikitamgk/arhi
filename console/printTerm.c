@@ -8,7 +8,7 @@ printTerm (int addres, int input)
   if (input == 1)
     {
       int new_value;
-      mt_gotoXY (68, 17);
+      mt_gotoXY (66, 20);
       printf ("%03d< ", addres);
       scanf ("%04d", &new_value);
       sc_MemorySet (addres, new_value);
@@ -22,7 +22,7 @@ printTerm (int addres, int input)
     }
   for (int count = 0; count <= 4; count++)
     {
-      mt_gotoXY (68, 17 + count);
+      mt_gotoXY (66, 20 + count);
       printf ("%03d> ", IN_OUT_addres[count]);
       if (IN_OUT_arr[count] >> 31 == 1)
         printf ("-");

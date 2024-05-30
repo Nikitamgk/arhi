@@ -75,6 +75,11 @@ CU ()
             sc_icounterSet (operand - 1);
           break;
 
+          case JNS: // Дополнительное
+          if ((!(Accum >> 14) & 1) && Accum != 0)
+            sc_icounterSet (operand - 1);
+          break;
+
         case HALT:
           sc_regSet (IT_MASK, 1);
           break;

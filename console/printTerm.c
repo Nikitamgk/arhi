@@ -4,11 +4,11 @@ printTerm (int addres, int input)
 {
   if (addres > 127 || addres < 0)
     return;
-  bc_box (65, 19, 75, 25, 7, 0, "IN-OUT", 1, 0);
+  bc_box (67, 19, 78, 25, 7, 0, "IN-OUT", 2, 0);
   if (input == 1)
     {
       int new_value;
-      mt_gotoXY (66, 20);
+      mt_gotoXY (68, 20);
       printf ("%03d< ", addres);
       scanf ("%04d", &new_value);
       sc_MemorySet (addres, new_value);
@@ -22,7 +22,7 @@ printTerm (int addres, int input)
     }
   for (int count = 0; count <= 4; count++)
     {
-      mt_gotoXY (66, 20 + count);
+      mt_gotoXY (68, 20 + count);
       printf ("%03d> ", IN_OUT_addres[count]);
       if (IN_OUT_arr[count] >> 31 == 1)
         printf ("-");

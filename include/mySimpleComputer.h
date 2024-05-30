@@ -29,11 +29,24 @@
 #define JZ 0x42
 #define HALT 0x43
 
+// Пользовательские функции
+#define JNS 0x55
+#define CHL 0x60
+
 extern int memory[128];
 extern int flags;
 extern int Accum;
 extern int ICount;
 extern int TACTS;
+
+typedef struct CACHE
+{
+  int c_line[10];
+  int c_number;
+  int c_uses;
+} CACHE;
+
+extern CACHE cache[5];
 
 int sc_MemoryInit (void);
 
@@ -74,3 +87,7 @@ void IRC (int signum);
 int ALU (int command, int operand);
 
 void CU ();
+
+void cacheLoad (CACHE *changed);
+
+int cacheCheck (int instruction);

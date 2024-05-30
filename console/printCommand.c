@@ -11,7 +11,6 @@ printCommand ()
   if (sc_commandDecode (memory[ICount], sign, command, operand) == -1)
     {
       printf ("!");
-      return;
     }
   if (*sign == 0)
     printf ("     +");

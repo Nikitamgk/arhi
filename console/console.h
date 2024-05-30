@@ -12,7 +12,6 @@
 #define Command = 16;
 #define in_out = 11;
 #define clavs = 17;
-#define cache = 56;
 #define memroyCellsY = 10;
 
 extern int IN_OUT_addres[4];
@@ -51,3 +50,5 @@ int loadMemory ();
 int setAccumulatorValue ();
 
 void handleKeypress (enum keys *key);
+
+void printCache ();

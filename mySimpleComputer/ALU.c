@@ -30,6 +30,10 @@ ALU (int command, int operand)
     case MUL:
       Accum = (Accum * memory[operand]) & 0x7FFF;
       break;
+
+      case CHL: // Дополнительное
+      Accum = (memory[operand] << 1) & 0x7FFF;
+      break;
     }
   if ((Accum > 0x7FFF) || (Accum < 0))
     {

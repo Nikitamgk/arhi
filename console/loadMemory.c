@@ -2,9 +2,9 @@
 int
 loadMemory ()
 {
-  char filename[101];
+  char filename[3];
   printf ("Enter load file name: ");
-  fgets (filename, 101, stdin);
+  fgets (filename, 3, stdin);
   mt_clrscrn ();
   mt_gotoXY (0, 26);
   filename[strlen (filename) - 1] = '\0';

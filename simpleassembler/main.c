@@ -81,7 +81,7 @@ read_instructions (const char *filename)
     {
       if (sscanf (line, "%d %s %d", &address, &command, &value) == 3)
         {
-          int cmd = get_command (command);
+          int cmd = get_command (command);  
           memory[address] = value | cmd << 7;
         }
       else

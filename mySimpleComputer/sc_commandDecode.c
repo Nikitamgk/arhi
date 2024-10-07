@@ -2,20 +2,10 @@
 int
 sc_commandDecode (int value, int *sign, int *command, int *operand)
 {
-  int temp = value;
-  if (temp >> 14 == 1)
-    return -1;
-  else
-    {
-      temp = temp >> 14;
-      *sign = temp;
-      temp = value;
-      temp = temp << 1;
-      temp = temp >> 8;
-      *command = temp;
-      temp = value;
-      temp = temp & (~(*command << 7));
-      *operand = temp;
-      return 0;
-    }
+  if (value & ~0x7FFF)
+    return -1; // биты, не соответствующие формату команды
+  *sign = (value & 0x4000) ? 1 : 0;
+  *command = (value & 0x3F80) >> 7;
+  *operand = value & 0x007F;
+  return 0;
 }
